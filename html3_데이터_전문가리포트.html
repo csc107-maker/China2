@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔비디아 순환금융 데이터·전문가 리포트 | 핵심 지표 & 기관 코멘트</title>
+
+<meta property="og:title" content="엔비디아 순환금융 데이터·전문가 리포트" />
+<meta property="og:description" content="CDS 프리미엄, 주가, 코스피 낙폭 등 핵심 지표와 젠슨 황부터 BIS까지 전문가·기관 코멘트를 한 화면에 정리했습니다." />
+<meta property="og:image" content="https://example.com/thumbnail/nvidia-circular-financing.png" />
+<meta property="og:url" content="https://example.com/blog/nvidia-circular-financing" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
+
+<style>
+  :root{
+    --bg:#F5F7FA; --surface:#FFFFFF;
+    --ink:#14213D; --ink-soft:#4A5568;
+    --line:#DCE3EC;
+    --blue:#2563AB; --blue-soft:#E7EFFB;
+    --gold:#B8860B; --gold-soft:#FBF2DD;
+    --teal:#147856; --teal-soft:#E4F4EE;
+    --red:#C6402F; --red-soft:#FBEAE7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--bg);
+    font-family:'IBM Plex Sans KR',sans-serif;
+    color:var(--ink);padding:36px 16px 46px;
+  }
+  .wrap{max-width:1040px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.08em;color:var(--teal);background:var(--teal-soft);
+    padding:5px 12px;border-radius:100px;margin-bottom:14px;
+  }
+  h1{
+    font-family:'Noto Serif KR',serif;font-weight:800;
+    font-size:clamp(22px,3.4vw,30px);line-height:1.35;
+    margin:0 0 8px;letter-spacing:-.01em;
+  }
+  .sub{color:var(--ink-soft);font-size:14.5px;line-height:1.7;margin:0 0 26px;max-width:680px;}
+
+  h2.section{
+    font-family:'IBM Plex Sans KR';font-size:15px;font-weight:700;
+    color:var(--ink);margin:34px 0 14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  h2.section i{color:var(--blue);font-size:17px;}
+
+  /* metric cards */
+  .metrics{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+  }
+  .metric{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;padding:15px 15px 13px;
+  }
+  .metric .val{
+    font-family:'IBM Plex Mono',monospace;font-weight:700;
+    font-size:22px;color:var(--ink);line-height:1.2;
+  }
+  .metric .val.red{color:var(--red);}
+  .metric .val.gold{color:var(--gold);}
+  .metric .lbl{font-size:11.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5;}
+
+  /* table */
+  .tablewrap{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;
+  }
+  table{width:100%;border-collapse:collapse;font-size:12.8px;}
+  thead th{
+    text-align:left;background:#EEF2F7;color:var(--ink-soft);
+    font-weight:700;font-size:11.5px;padding:10px 12px;
+    letter-spacing:.02em;
+  }
+  tbody td{
+    padding:11px 12px;border-top:1px solid var(--line);
+    color:var(--ink);line-height:1.55;vertical-align:top;
+  }
+  tbody td.c1{font-weight:700;white-space:nowrap;}
+  tbody td.dim{color:var(--ink-soft);}
+
+  /* quotes */
+  .quotes{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:12px;
+  }
+  .qcard{
+    background:var(--surface);border:1px solid var(--line);
+    border-left:4px solid var(--blue);
+    border-radius:12px;padding:15px 16px 14px;
+  }
+  .qcard.risk{border-left-color:var(--red);}
+  .qcard.balanced{border-left-color:var(--gold);}
+  .qcard.institution{border-left-color:var(--teal);}
+  .qcard p{margin:0 0 10px;font-size:13px;line-height:1.65;color:var(--ink);}
+  .qcard .who{display:flex;align-items:center;gap:8px;}
+  .qcard .avatar{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--blue-soft);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;font-size:13px;flex:none;
+  }
+  .qcard.risk .avatar{background:var(--red-soft);color:var(--red);}
+  .qcard.balanced .avatar{background:var(--gold-soft);color:var(--gold);}
+  .qcard.institution .avatar{background:var(--teal-soft);color:var(--teal);}
+  .qcard .name{font-size:12.5px;font-weight:700;color:var(--ink);}
+  .qcard .role{font-size:11px;color:var(--ink-soft);}
+
+  .foot{margin-top:20px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9AA5B4;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow"><i class="ti ti-report-analytics"></i> DATA & VOICES</span>
+  <h1>숫자로 보는 순환금융, 시장은 뭐라고 말하나</h1>
+  <p class="sub">2026년 7월 24일~28일 사이 확인된 핵심 지표와, 젠슨 황부터 BIS·ECB까지 전문가·기관의 시각을 한 화면에 모았습니다.</p>
+
+  <h2 class="section"><i class="ti ti-chart-bar"></i>핵심 지표</h2>
+  <div class="metrics">
+    <div class="metric"><div class="val">$540B+</div><div class="lbl">엔비디아, 연초 이후 오픈AI 신규건 제외 누적 투자·금융지원 규모</div></div>
+    <div class="metric"><div class="val gold">$750B</div><div class="lbl">오픈AI 관련 신규 협의 총액(보증+금융지원 등, 협의중)</div></div>
+    <div class="metric"><div class="val red">0.82%p</div><div class="lbl">엔비디아 5년물 CDS 프리미엄(장중 최고, 사상 최고치)</div></div>
+    <div class="metric"><div class="val red">-4.99%</div><div class="lbl">엔비디아 주가 낙폭(7/27, $196.51 마감)</div></div>
+    <div class="metric"><div class="val red">-10.84%</div><div class="lbl">코스피 낙폭(7/28, 6,023.66 마감·서킷브레이커)</div></div>
+    <div class="metric"><div class="val red">-13.39% / -14.65%</div><div class="lbl">삼성전자 / SK하이닉스 낙폭(7/28 종가 기준)</div></div>
+  </div>
+
+  <h2 class="section"><i class="ti ti-table"></i>파트너사별 자금·매출 흐름</h2>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th style="width:20%">파트너사</th><th style="width:40%">엔비디아로부터 받은 것</th><th style="width:40%">엔비디아에 지급하는 것</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="c1">오픈AI</td><td>칩구매 금융지원 최대 $3,500억 + 임대 지급보증 $2,500억(협의중)</td><td class="dim">GPU·시스템 대량 구매</td></tr>
+        <tr><td class="c1">SK그룹</td><td>$5,000억+ AI 이니셔티브, 차세대 HBM 공동설계 지원</td><td class="dim">HBM 공급, AI 인프라 투자 확대</td></tr>
+        <tr><td class="c1">코어위브</td><td>지분투자 누적 $20억+, 장기 GPU 공급계약</td><td class="dim">5GW+ 데이터센터 구축, GPU 임대매출</td></tr>
+        <tr><td class="c1">SSI</td><td>약 $50억 투자·장기 파트너십</td><td class="dim">베라 루빈 시스템 도입, 컴퓨팅 10배 확장</td></tr>
+        <tr><td class="c1">소프트뱅크</td><td>오하이오 10GW 데이터센터 임대 보증 참여</td><td class="dim">오픈AI向 인프라 확장, GPU 수요 창출</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section"><i class="ti ti-quote"></i>누가, 뭐라고 말했나</h2>
+  <div class="quotes">
+    <div class="qcard">
+      <p>"우리가 투자하는 금액은 이 기업들이 궁극적으로 조달해야 할 자금 총액의 극히 일부다. 순환적이라는 발상은 터무니없다."</p>
+      <div class="who"><span class="avatar"><i class="ti ti-building-factory"></i></span><div><div class="name">젠슨 황</div><div class="role">엔비디아 CEO</div></div></div>
+    </div>
+    <div class="qcard risk">
+      <p>AI 기업 간 순환거래로 회계상 실적이 부풀려지고 있다며 엔비디아·마이크론 등에 신규 공매도 포지션을 공개, 반도체주 전반 약 30% 조정을 예측.</p>
+      <div class="who"><span class="avatar"><i class="ti ti-trending-down"></i></span><div><div class="name">마이클 버리</div><div class="role">사이언자산운용 대표</div></div></div>
+    </div>
+    <div class="qcard balanced">
+      <p>"엔비디아의 투자·파트너십이 장기 AI 구축에 대한 신뢰를 뒷받침하지만, 투자자들은 여전히 순환거래를 우려하고 있다."</p>
+      <div class="who"><span class="avatar"><i class="ti ti-scale"></i></span><div><div class="name">게리 탠</div><div class="role">올스프링글로벌인베스트먼츠 PM</div></div></div>
+    </div>
+    <div class="qcard risk">
+      <p>"오픈AI 데이터센터 부채 지급보증은 이미 감시 대상이던 벤더 파이낸싱을 한층 심화시킨다. 수요 신호이자 동시에 자금 압박의 신호다."</p>
+      <div class="who"><span class="avatar"><i class="ti ti-alert-triangle"></i></span><div><div class="name">빌리 렁</div><div class="role">글로벌X매니지먼트 투자전략가</div></div></div>
+    </div>
+    <div class="qcard">
+      <p>"투자 흐름이 단 6개월만 멈추더라도 엔비디아에는 상당한 위험이 될 수 있다."</p>
+      <div class="who"><span class="avatar"><i class="ti ti-clock-exclamation"></i></span><div><div class="name">맨딥 싱</div><div class="role">블룸버그인텔리전스 애널리스트</div></div></div>
+    </div>
+    <div class="qcard institution">
+      <p>최근 대규모 AI 투자 구조가 닷컴버블 당시 시스코·루슨트·노텔의 '벤더 파이낸싱' 관행과 유사한 패턴을 보인다고 진단.</p>
+      <div class="who"><span class="avatar"><i class="ti ti-building-bank"></i></span><div><div class="name">KB증권 리서치센터</div><div class="role">국내 증권사 리포트</div></div></div>
+    </div>
+    <div class="qcard institution">
+      <p>AI 버블 붕괴 시 과거 금융위기와 유사한 파괴력을 가질 수 있으며, 발주처-공급처 상호 지분보유 구조를 리스크로 지목.</p>
+      <div class="who"><span class="avatar"><i class="ti ti-world"></i></span><div><div class="name">국제결제은행(BIS)</div><div class="role">2026년 연차보고서</div></div></div>
+    </div>
+    <div class="qcard institution">
+      <p>"AI가 기대에 못 미칠 경우 막대한 투자금이 회수되지 못하는 문제가 발생할 수 있다"며 금융안정 리스크를 경고.</p>
+      <div class="who"><span class="avatar"><i class="ti ti-building-bank"></i></span><div><div class="name">주요국 중앙은행 총재단</div><div class="role">ECB 신트라 포럼(로이터 인용)</div></div></div>
+    </div>
+  </div>
+
+  <div class="foot">SOURCE: BLOOMBERG · FT · WSJ · REUTERS · BIS 2026 ANNUAL REPORT · KB증권 (2026.07 기준)</div>
+</div>
+</body>
+</html>
