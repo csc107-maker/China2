@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔비디아 순환금융 구조도 | AI 반도체 투자·매출 순환 구조 한눈에 보기</title>
+
+<meta property="og:title" content="엔비디아 순환금융 구조도 | AI 반도체 투자·매출 순환 구조" />
+<meta property="og:description" content="엔비디아가 오픈AI·SK그룹·코어위브·SSI 등에 투자·보증하고, 다시 자사 반도체를 판매받는 순환금융 구조를 한눈에 정리했습니다." />
+<meta property="og:image" content="https://example.com/thumbnail/nvidia-circular-financing.png" />
+<meta property="og:url" content="https://example.com/blog/nvidia-circular-financing" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
+
+<style>
+  :root{
+    --bg:#F5F7FA;
+    --surface:#FFFFFF;
+    --ink:#14213D;
+    --ink-soft:#4A5568;
+    --line:#DCE3EC;
+    --blue:#2563AB;
+    --blue-soft:#E7EFFB;
+    --gold:#B8860B;
+    --gold-soft:#FBF2DD;
+    --teal:#147856;
+    --teal-soft:#E4F4EE;
+    --red:#C6402F;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'IBM Plex Sans KR', sans-serif;
+    color:var(--ink);
+    padding:36px 16px 44px;
+  }
+  .wrap{max-width:1000px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;font-weight:600;letter-spacing:.08em;
+    color:var(--blue);background:var(--blue-soft);
+    padding:5px 12px;border-radius:100px;margin-bottom:14px;
+  }
+  h1{
+    font-family:'Noto Serif KR',serif;
+    font-weight:800;
+    font-size:clamp(22px,3.4vw,30px);
+    line-height:1.35;
+    margin:0 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    line-height:1.7;
+    margin:0 0 26px;
+    max-width:640px;
+  }
+  .stage{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:20px 14px 26px;
+    box-shadow:0 1px 2px rgba(20,33,61,.04);
+  }
+  .diagram-svg{width:100%;height:auto;display:block;}
+  .legend{
+    display:flex;flex-wrap:wrap;gap:18px;
+    justify-content:center;
+    margin-top:6px;padding-top:16px;
+    border-top:1px dashed var(--line);
+    font-size:12.5px;color:var(--ink-soft);
+  }
+  .legend span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:20px;height:3px;border-radius:2px;display:inline-block;}
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+    margin-top:22px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 16px 15px;
+  }
+  .card .head{
+    display:flex;align-items:center;gap:8px;
+    margin-bottom:9px;
+  }
+  .card .icon{
+    width:30px;height:30px;border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;flex:none;
+  }
+  .card h3{margin:0;font-size:14.5px;font-weight:700;color:var(--ink);}
+  .row{
+    display:flex;gap:8px;font-size:12.6px;line-height:1.6;
+    margin-top:7px;color:var(--ink-soft);
+  }
+  .tag{
+    flex:none;font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;font-weight:600;
+    padding:2px 7px;border-radius:6px;height:fit-content;
+    white-space:nowrap;margin-top:1px;
+  }
+  .tag.out{background:var(--blue-soft);color:var(--blue);}
+  .tag.in{background:var(--gold-soft);color:var(--gold);}
+
+  .note{
+    margin-top:18px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    background:var(--teal-soft);
+    border:1px solid #cfe8dd;
+    border-radius:12px;
+    padding:12px 14px;
+    display:flex;gap:9px;align-items:flex-start;
+    line-height:1.6;
+  }
+  .note i{color:var(--teal);font-size:16px;margin-top:1px;}
+  .foot{
+    margin-top:14px;text-align:right;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;color:#9AA5B4;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow"><i class="ti ti-recycle"></i> STRUCTURE MAP</span>
+  <h1>엔비디아發 순환금융, 돈은 어떻게 도는가</h1>
+  <p class="sub">엔비디아가 파트너사에 투자·보증·금융지원을 제공하면, 해당 기업은 그 자금으로 다시 엔비디아 반도체를 구매합니다. 2026년 7월 말 기준 주요 딜 구조를 정리했습니다.</p>
+
+  <div class="stage">
+    <svg class="diagram-svg" viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrOut" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#2563AB"/>
+        </marker>
+        <marker id="arrIn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#B8860B"/>
+        </marker>
+      </defs>
+
+      <!-- connecting spokes: outbound (blue, money/guarantee) + inbound (gold, chip revenue) -->
+      <!-- node angles: 0,60,120,180,240,300 around center 450,410 r=260 -->
+
+      <!-- top: OpenAI 450,150 -->
+      <path d="M 450,300 C 420,250 420,205 448,158" fill="none" stroke="#2563AB" stroke-width="3" marker-end="url(#arrOut)"/>
+      <path d="M 452,158 C 480,205 480,250 450,300" fill="none" stroke="#B8860B" stroke-width="3" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#arrIn)"/>
+
+      <!-- upper right: SK그룹 675,280 -->
+      <path d="M 538,352 C 590,325 630,305 668,285" fill="none" stroke="#2563AB" stroke-width="3" marker-end="url(#arrOut)"/>
+      <path d="M 666,275 C 628,295 588,318 540,342" fill="none" stroke="#B8860B" stroke-width="3" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#arrIn)"/>
+
+      <!-- lower right: CoreWeave 675,540 -->
+      <path d="M 538,468 C 590,495 630,515 668,535" fill="none" stroke="#2563AB" stroke-width="3" marker-end="url(#arrOut)"/>
+      <path d="M 666,545 C 628,525 588,502 540,478" fill="none" stroke="#B8860B" stroke-width="3" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#arrIn)"/>
+
+      <!-- bottom: SSI 450,670 -->
+      <path d="M 450,520 C 420,570 420,615 448,662" fill="none" stroke="#2563AB" stroke-width="3" marker-end="url(#arrOut)"/>
+      <path d="M 452,662 C 480,615 480,570 450,520" fill="none" stroke="#B8860B" stroke-width="3" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#arrIn)"/>
+
+      <!-- lower left: SoftBank/Stargate 225,540 -->
+      <path d="M 362,468 C 310,495 270,515 232,535" fill="none" stroke="#2563AB" stroke-width="3" marker-end="url(#arrOut)"/>
+      <path d="M 234,545 C 272,525 312,502 360,478" fill="none" stroke="#B8860B" stroke-width="3" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#arrIn)"/>
+
+      <!-- upper left: 데이터센터군 225,280 -->
+      <path d="M 362,352 C 310,325 270,305 232,285" fill="none" stroke="#2563AB" stroke-width="3" marker-end="url(#arrOut)"/>
+      <path d="M 234,275 C 272,295 312,318 360,342" fill="none" stroke="#B8860B" stroke-width="3" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#arrIn)"/>
+
+      <!-- center hub -->
+      <circle cx="450" cy="410" r="95" fill="#14213D"/>
+      <circle cx="450" cy="410" r="95" fill="none" stroke="#2563AB" stroke-width="2" stroke-opacity=".5"/>
+      <text x="450" y="398" text-anchor="middle" fill="#FFFFFF" font-family="Noto Serif KR" font-weight="700" font-size="21">NVIDIA</text>
+      <text x="450" y="422" text-anchor="middle" fill="#BFD0EA" font-family="IBM Plex Sans KR" font-size="11.5">엔비디아</text>
+      <text x="450" y="442" text-anchor="middle" fill="#8FA3C6" font-family="IBM Plex Mono" font-size="9.5">투자·보증 ⇄ 반도체 매출</text>
+
+      <!-- node cards (as SVG rect+text for crisp layout inside svg) -->
+      <!-- OpenAI -->
+      <g>
+        <rect x="370" y="118" width="160" height="52" rx="12" fill="#FFFFFF" stroke="#DCE3EC"/>
+        <text x="450" y="140" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="13.5" fill="#14213D">오픈AI (OpenAI)</text>
+        <text x="450" y="158" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="10.5" fill="#4A5568">스타게이트·GPU 대량구매</text>
+      </g>
+      <!-- SK -->
+      <g>
+        <rect x="600" y="248" width="172" height="52" rx="12" fill="#FFFFFF" stroke="#DCE3EC"/>
+        <text x="686" y="270" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="13.5" fill="#14213D">SK그룹·SK하이닉스</text>
+        <text x="686" y="288" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="10.5" fill="#4A5568">HBM 공동설계 협력</text>
+      </g>
+      <!-- CoreWeave -->
+      <g>
+        <rect x="600" y="512" width="172" height="52" rx="12" fill="#FFFFFF" stroke="#DCE3EC"/>
+        <text x="686" y="534" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="13.5" fill="#14213D">코어위브</text>
+        <text x="686" y="552" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="10.5" fill="#4A5568">데이터센터 5GW+ 구축</text>
+      </g>
+      <!-- SSI -->
+      <g>
+        <rect x="370" y="640" width="160" height="52" rx="12" fill="#FFFFFF" stroke="#DCE3EC"/>
+        <text x="450" y="662" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="13.5" fill="#14213D">SSI</text>
+        <text x="450" y="680" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="10.5" fill="#4A5568">베라 루빈 시스템 도입</text>
+      </g>
+      <!-- SoftBank -->
+      <g>
+        <rect x="128" y="512" width="172" height="52" rx="12" fill="#FFFFFF" stroke="#DCE3EC"/>
+        <text x="214" y="534" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="13.5" fill="#14213D">소프트뱅크·스타게이트</text>
+        <text x="214" y="552" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="10.5" fill="#4A5568">오하이오 10GW 데이터센터</text>
+      </g>
+      <!-- Others -->
+      <g>
+        <rect x="128" y="248" width="172" height="52" rx="12" fill="#FFFFFF" stroke="#DCE3EC"/>
+        <text x="214" y="270" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="13.5" fill="#14213D">아이렌·네비우스 등</text>
+        <text x="214" y="288" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="10.5" fill="#4A5568">GPU 클러스터 임대</text>
+      </g>
+    </svg>
+
+    <div class="legend">
+      <span><span class="dot" style="background:#2563AB;"></span>엔비디아 → 파트너 (투자·보증·금융지원)</span>
+      <span><span class="dot" style="background:#B8860B;border-top:2px dashed #B8860B;height:0;"></span>파트너 → 엔비디아 (반도체 구매·매출)</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="head"><span class="icon" style="background:var(--blue-soft);"><i class="ti ti-cpu" style="color:var(--blue);"></i></span><h3>오픈AI</h3></div>
+      <div class="row"><span class="tag out">받음</span>칩 구매대금 최대 3,500억달러 금융지원 + 스타게이트 임대 2,500억달러 지급보증 (협의중)</div>
+      <div class="row"><span class="tag in">지급</span>엔비디아 GPU·시스템 대량 구매</div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="icon" style="background:var(--blue-soft);"><i class="ti ti-building-factory-2" style="color:var(--blue);"></i></span><h3>SK그룹·SK하이닉스</h3></div>
+      <div class="row"><span class="tag out">받음</span>5,000억달러+ AI 이니셔티브, 차세대 HBM 공동설계 지원</div>
+      <div class="row"><span class="tag in">지급</span>HBM 공급, AI 인프라 투자 확대</div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="icon" style="background:var(--blue-soft);"><i class="ti ti-server-2" style="color:var(--blue);"></i></span><h3>코어위브</h3></div>
+      <div class="row"><span class="tag out">받음</span>지분투자 누적 20억달러+ 및 장기 GPU 공급계약</div>
+      <div class="row"><span class="tag in">지급</span>2030년까지 5GW+ 데이터센터 구축, GPU 임대매출</div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="icon" style="background:var(--blue-soft);"><i class="ti ti-brain" style="color:var(--blue);"></i></span><h3>SSI (세이프 슈퍼인텔리전스)</h3></div>
+      <div class="row"><span class="tag out">받음</span>약 50억달러 투자·장기 파트너십 (7/27 체결)</div>
+      <div class="row"><span class="tag in">지급</span>베라 루빈 시스템 도입, 컴퓨팅 능력 10배 확대</div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="icon" style="background:var(--blue-soft);"><i class="ti ti-building-skyscraper" style="color:var(--blue);"></i></span><h3>소프트뱅크·스타게이트</h3></div>
+      <div class="row"><span class="tag out">받음</span>오하이오 10GW 데이터센터 임대 보증 참여</div>
+      <div class="row"><span class="tag in">지급</span>오픈AI向 컴퓨팅 인프라 확장, GPU 수요 창출</div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="icon" style="background:var(--blue-soft);"><i class="ti ti-stack-2" style="color:var(--blue);"></i></span><h3>아이렌·네비우스 등</h3></div>
+      <div class="row"><span class="tag out">받음</span>오픈AI 신규건 제외, 연초 이후 누적 5,400억달러+ 투자·금융지원</div>
+      <div class="row"><span class="tag in">지급</span>GPU 클러스터 구매·임대 매출</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <i class="ti ti-info-circle"></i>
+    <div>오픈AI 관련 2,500억달러 지급보증·3,500억달러 금융지원은 2026년 7월 27일 기준 <b>협의 단계</b>로, 최종 계약 조건은 확정되지 않았습니다. (출처: 월스트리트저널, 블룸버그통신 종합)</div>
+  </div>
+  <div class="foot">SOURCE: BLOOMBERG · FT · WSJ (2026.07.24–07.28 보도 종합)</div>
+</div>
+</body>
+</html>
