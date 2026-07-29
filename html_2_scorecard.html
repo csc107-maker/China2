@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<div class="hnx-sc-wrap">
+  <style>
+    .hnx-sc-wrap{
+      font-family:'Noto Sans KR',sans-serif;
+      background:#F4F8FC;
+      border:1px solid #DCE6F2;
+      border-radius:18px;
+      padding:30px 26px;
+      max-width:720px;
+      margin:28px auto;
+      box-sizing:border-box;
+    }
+    .hnx-sc-eyebrow{
+      font-size:12px;font-weight:700;letter-spacing:.14em;
+      color:#0B2E59;background:#E4ECF8;display:inline-block;
+      padding:5px 10px;border-radius:999px;margin-bottom:12px;
+    }
+    .hnx-sc-title{
+      font-family:'Noto Serif KR',serif;font-size:22px;font-weight:700;
+      color:#101828;margin:0 0 22px;line-height:1.4;
+    }
+    .hnx-sc-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;
+    }
+    .hnx-sc-card{
+      background:#FFFFFF;border:1px solid #E1E8F0;border-radius:14px;
+      padding:18px 14px;text-align:left;
+    }
+    .hnx-sc-label{font-size:12.5px;color:#5B6B82;font-weight:500;margin-bottom:8px;}
+    .hnx-sc-num{font-size:23px;font-weight:900;color:#101828;font-variant-numeric:tabular-nums;line-height:1.2;}
+    .hnx-sc-unit{font-size:13px;font-weight:700;color:#5B6B82;margin-left:2px;}
+    .hnx-sc-yoy{
+      display:inline-flex;align-items:center;gap:3px;margin-top:8px;
+      font-size:12.5px;font-weight:700;color:#C6303E;
+    }
+    .hnx-sc-yoy i{font-size:13px;}
+    .hnx-sc-wide{
+      background:linear-gradient(135deg,#0B2E59,#123B70);
+      border-radius:14px;padding:18px 20px;color:#fff;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:10px;margin-bottom:20px;
+    }
+    .hnx-sc-wide-l .hnx-sc-wtitle{font-size:13px;color:#B9CBE6;margin-bottom:6px;}
+    .hnx-sc-wide-l .hnx-sc-wnum{font-size:26px;font-weight:900;font-variant-numeric:tabular-nums;}
+    .hnx-sc-wide-r{font-size:12.5px;color:#DCE6F5;line-height:1.6;text-align:right;}
+    .hnx-sc-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px;}
+    .hnx-sc-tbl th{
+      text-align:left;background:#EAF1FA;color:#0B2E59;font-weight:700;
+      padding:9px 12px;border-bottom:1px solid #DCE6F2;
+    }
+    .hnx-sc-tbl td{padding:9px 12px;border-bottom:1px solid #EAF0F7;color:#3C4A5E;}
+    .hnx-sc-tbl tr:last-child td{border-bottom:none;}
+    .hnx-sc-miss{color:#2159C9;font-weight:700;}
+    .hnx-sc-foot{
+      margin-top:16px;padding-top:14px;border-top:1px solid #DCE6F2;
+      font-size:11.5px;color:#8090A5;line-height:1.6;
+    }
+  </style>
+
+  <span class="hnx-sc-eyebrow">EARNINGS · 2026년 2분기</span>
+  <p class="hnx-sc-title">SK하이닉스 2분기 실적 스코어카드</p>
+
+  <div class="hnx-sc-wide">
+    <div class="hnx-sc-wide-l">
+      <div class="hnx-sc-wtitle"><i class="ti ti-stack-2"></i>&nbsp; 상반기 누적 영업이익</div>
+      <div class="hnx-sc-wnum">약 98.1조원</div>
+    </div>
+    <div class="hnx-sc-wide-r">1분기 37.6조원 + 2분기 60.5조원<br>매출은 131.9조원으로 반기 기준 첫 100조원 돌파</div>
+  </div>
+
+  <div class="hnx-sc-grid">
+    <div class="hnx-sc-card">
+      <div class="hnx-sc-label">매출</div>
+      <div class="hnx-sc-num">79.32<span class="hnx-sc-unit">조원</span></div>
+      <div class="hnx-sc-yoy"><i class="ti ti-arrow-up-right"></i>전년比 +256.8%</div>
+    </div>
+    <div class="hnx-sc-card">
+      <div class="hnx-sc-label">영업이익</div>
+      <div class="hnx-sc-num">60.54<span class="hnx-sc-unit">조원</span></div>
+      <div class="hnx-sc-yoy"><i class="ti ti-arrow-up-right"></i>전년比 +557.2%</div>
+    </div>
+    <div class="hnx-sc-card">
+      <div class="hnx-sc-label">순이익</div>
+      <div class="hnx-sc-num">93.92<span class="hnx-sc-unit">조원</span></div>
+      <div class="hnx-sc-yoy"><i class="ti ti-arrow-up-right"></i>전년比 +1242.5%</div>
+    </div>
+  </div>
+
+  <table class="hnx-sc-tbl">
+    <thead>
+      <tr><th>구분</th><th>실제 실적</th><th>증권가 컨센서스</th><th>결과</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>매출</td><td>79조 3,187억원</td><td>82조 5,827억원</td><td class="hnx-sc-miss">-3.9% 하회</td></tr>
+      <tr><td>영업이익</td><td>60조 5,426억원</td><td>63조 1,532억원</td><td class="hnx-sc-miss">-4.1% 하회</td></tr>
+    </tbody>
+  </table>
+
+  <p class="hnx-sc-foot">자료: SK하이닉스 공시(2026.7.29), 에프앤가이드 컨센서스 · 역대 최대 실적이지만 시장 눈높이는 밑돈 '어닝 미스' 케이스</p>
+</div>
