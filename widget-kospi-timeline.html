@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>코스피 최근 롤러코스터 타임라인 - 2026년 7~8월</title>
+
+<!-- OG 메타태그: 아래 content 값 중 이미지 URL과 페이지 URL은 실제 블로그 게시 후 주소로 교체해 주세요 -->
+<meta property="og:title" content="코스피, 한 달 새 무슨 일이? 7~8월 변동성 타임라인" />
+<meta property="og:description" content="코스피 사상 최대 상승률부터 이틀 연속 서킷브레이커까지, 2026년 7~8월 코스피 급등락을 시간순으로 정리했습니다." />
+<meta property="og:image" content="여기에_썸네일_이미지_URL_입력.png" />
+<meta property="og:url" content="여기에_게시할_블로그_페이지_URL_입력" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    background: #EEF3FA;
+    padding: 28px 14px;
+    color: #16324F;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E3E9F2;
+    box-shadow: 0 10px 30px rgba(22, 50, 79, 0.06);
+    overflow: hidden;
+  }
+  .head {
+    background: linear-gradient(120deg, #7A1F2B 0%, #B23A3A 100%);
+    color: #FFFFFF;
+    padding: 22px 24px;
+  }
+  .head .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #F3C6C6;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .head h1 { font-size: 20px; font-weight: 900; line-height: 1.4; }
+  .head p { font-size: 13px; color: #F6DADA; margin-top: 6px; }
+
+  .body-pad { padding: 24px 22px 20px; }
+
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 6px; bottom: 6px;
+    width: 2px;
+    background: #E3E9F2;
+  }
+  .t-item { position: relative; padding-bottom: 22px; }
+  .t-item:last-child { padding-bottom: 0; }
+  .dot {
+    position: absolute;
+    left: -26px; top: 2px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 0 0 2px currentColor;
+  }
+  .dot.up { background: #D64545; color: #D64545; }
+  .dot.down { background: #2F6FE0; color: #2F6FE0; }
+  .dot.now { background: #C9973C; color: #C9973C; }
+
+  .t-date { font-size: 12px; font-weight: 800; color: #5B6B82; margin-bottom: 3px; }
+  .t-title { font-size: 14.5px; font-weight: 900; color: #16324F; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;}
+  .t-title .tag-up { color: #D64545; }
+  .t-title .tag-down { color: #2F6FE0; }
+  .t-desc { font-size: 12.5px; color: #5B6B82; line-height: 1.6; }
+
+  .side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .side-card {
+    background: #F7FAFD;
+    border: 1px solid #E3E9F2;
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .side-card .s-label {
+    font-size: 11.5px;
+    color: #5B6B82;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  .side-card .s-value { font-size: 16px; font-weight: 900; color: #16324F; }
+  .side-card .s-sub { font-size: 11px; color: #7A8699; margin-top: 3px; }
+
+  .note {
+    margin-top: 18px;
+    background: #FBF6EA;
+    border: 1px solid #EFDFB4;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 11.5px;
+    color: #7A5F27;
+    line-height: 1.55;
+    display: flex;
+    gap: 8px;
+  }
+  .note i { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+
+  .foot {
+    text-align: center;
+    font-size: 11px;
+    color: #9AA7B8;
+    padding: 14px;
+    border-top: 1px dashed #E3E9F2;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><i class="ti ti-chart-candle"></i> KOSPI VOLATILITY TIMELINE</div>
+      <h1>코스피, 한 달 새 무슨 일이 있었나</h1>
+      <p>7월 -33% 급락 → 사상 최대 반등 → 다시 숨고르기, 그리고 오늘</p>
+    </div>
+
+    <div class="body-pad">
+      <div class="timeline">
+        <div class="t-item">
+          <div class="dot down"></div>
+          <div class="t-date">7월 1일 ~ 29일</div>
+          <div class="t-title"><span class="tag-down">한 달간 -33.19%</span> 급락</div>
+          <div class="t-desc">8,476.48로 시작한 코스피가 5,600선까지 밀렸습니다. 7월 28~29일에는 코스피 역사상 최초로 이틀 연속 서킷브레이커가 발동하며 이틀간 -16.17% 폭락, 이달에만 매수·매도 사이드카가 12차례 발동됐습니다.</div>
+        </div>
+
+        <div class="t-item">
+          <div class="dot up"></div>
+          <div class="t-date">7월 31일</div>
+          <div class="t-title"><span class="tag-up">+17.91%(+1,001.89p)</span> 사상 최대 반등</div>
+          <div class="t-desc">코스피 46년 역사상 최대 상승률·상승폭으로 6,595.45 마감. 삼성전자 +26.81%, SK하이닉스는 30% 상하한제 도입 이후 첫 상한가를 기록했습니다. 증권가에서는 대형 헤지펀드의 레버리지 숏 포지션 청산이 반등의 트리거가 됐다는 분석을 내놓았습니다.</div>
+        </div>
+
+        <div class="t-item">
+          <div class="dot down"></div>
+          <div class="t-date">8월 3일</div>
+          <div class="t-title"><span class="tag-down">-5.12%(-338.00p)</span> 차익실현</div>
+          <div class="t-desc">6,257.45 마감. 삼성전자 -8.76%(239,500원), SK하이닉스 -8.79%(1,567,000원). 전날 폭등에 따른 단기 차익실현 성격이 짙다는 게 증권가의 공통된 해석입니다.</div>
+        </div>
+
+        <div class="t-item">
+          <div class="dot now"></div>
+          <div class="t-date">8월 4일 · 오늘</div>
+          <div class="t-title">관찰 포인트</div>
+          <div class="t-desc">간밤 미국 증시 강세(다우 사상 최고치, 유가 급락)가 오늘 코스피에 긍정적 힌트를 주지만, 실제 개장가와 외국인 수급 방향은 장이 열려야 확인할 수 있습니다.</div>
+        </div>
+      </div>
+
+      <div class="side-grid">
+        <div class="side-card">
+          <div class="s-label"><i class="ti ti-currency-dollar"></i> 원/달러 환율</div>
+          <div class="s-value">1,433.90원</div>
+          <div class="s-sub">8/3 오전 기준 · 7월 한 달 8%+ 강세</div>
+        </div>
+        <div class="side-card">
+          <div class="s-label"><i class="ti ti-building-bank"></i> 한국은행 기준금리</div>
+          <div class="s-value">2.75%</div>
+          <div class="s-sub">7/16 금통위, 2.50%→2.75% 인상</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <i class="ti ti-info-circle"></i>
+        <div>7월 31일 급등의 배경으로 거론되는 대형 헤지펀드발 숏스퀴즈 이슈는 시장에서 나온 해석이며, 공식 확인된 단일 원인은 아닙니다. 지수 자체의 등락률·마감가는 한국거래소(KRX) 기준입니다.</div>
+      </div>
+    </div>
+
+    <div class="foot">자료: 한국거래소(KRX), 머니투데이, 국제뉴스, 한국경제, 한국은행 (2026.08.03 기준) · 투자 참고용 자료입니다.</div>
+  </div>
+</body>
+</html>
