@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이번 주 코스피, 이렇게 흘러갔다 (8/3~8/7)</title>
+
+<!-- ===== 요청하신 OG 메타태그 (블로그 발행 시 <head>에 삽입, 또는 이 위젯을 표지로 쓸 때 사용) ===== -->
+<meta property="og:title" content="SK하이닉스 프리마켓 상·하한가 주문 금지, 금리 인상까지 이번 주 증시 총정리" />
+<meta property="og:description" content="7월31일 역대급 반등부터 8월7일 NXT의 프리마켓 상·하한가 주문 금지 발표까지, 이번 주 코스피·SK하이닉스·금리 인상 이슈를 한 번에 정리했습니다." />
+<meta property="og:image" content="여기에 실제 업로드한 PNG 썸네일 이미지 URL을 입력하세요" />
+<meta property="og:url" content="여기에 실제 발행되는 블로그 게시글 URL을 입력하세요" />
+<!-- ============================================================================== -->
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    background: #F5F7FB; color: #16213A; padding: 28px 16px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .card { background:#fff; border:1px solid #E3E8F0; border-radius:18px; overflow:hidden;
+    box-shadow: 0 1px 3px rgba(22,33,58,0.05), 0 8px 24px rgba(22,33,58,0.04); }
+  .head { background: linear-gradient(120deg, #16305C 0%, #3C4E86 100%); color:#fff; padding:24px 24px 20px; }
+  .head .eyebrow { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600;
+    background: rgba(255,255,255,0.16); padding:4px 10px; border-radius:999px; margin-bottom:10px; }
+  .head h1 { font-size: 21px; font-weight: 800; line-height:1.4; }
+  .head p { font-size: 13px; opacity:0.85; margin-top:6px; }
+
+  .timeline { padding: 26px 24px; }
+  .tl { position:relative; padding-left:26px; }
+  .tl::before { content:''; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:#E3E8F0; }
+  .day { position:relative; padding-bottom: 24px; }
+  .day:last-child { padding-bottom: 0; }
+  .day .dot {
+    position:absolute; left:-26px; top:2px; width:20px; height:20px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff;
+  }
+  .d-up { background:#E1483D; }
+  .d-down { background:#2F6FED; }
+  .d-warn { background:#E8A33D; }
+  .d-neutral { background:#8993A6; }
+
+  .day .date { font-size: 12px; font-weight:800; color:#5B6478; }
+  .day .title { font-size: 14.5px; font-weight:800; margin-top:2px; color:#16213A;}
+  .day .desc { font-size: 12.8px; color:#4A5470; margin-top:4px; line-height:1.6; }
+  .day .chips { margin-top:8px; display:flex; gap:6px; flex-wrap:wrap; }
+  .chip { font-size: 11px; font-weight:700; padding:3px 9px; border-radius:999px; }
+  .chip-up { background:#FDEDEC; color:#C0392B; }
+  .chip-down { background:#EAF0FE; color:#2F6FED; }
+  .chip-warn { background:#FFF7ED; color:#B5730B; }
+
+  .footbar { padding: 16px 24px 22px; border-top:1px solid #E3E8F0; font-size:12px; color:#5B6478; display:flex; gap:8px; align-items:flex-start;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="head">
+      <span class="eyebrow"><i class="ti ti-calendar-week"></i> 8월 첫째 주 증시 리캡</span>
+      <h1>이번 한 주, 코스피는 이렇게 흘러갔다</h1>
+      <p>역대급 반등에서 사이드카, 프리마켓 사태까지 — 닷새간의 기록</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl">
+        <div class="day">
+          <div class="dot d-up"><i class="ti ti-arrow-up"></i></div>
+          <div class="date">7/31 (금)</div>
+          <div class="title">KOSPI +17.91%, 역대 최대 상승률</div>
+          <div class="desc">6,595.45 마감. SK하이닉스 +29.95% 상한가(사상 최초), 삼성전자 +26.81%. 삼성 2분기 실적 서프라이즈 + 빅테크 AI 투자 확대가 트리거</div>
+          <div class="chips"><span class="chip chip-up">상한가</span><span class="chip chip-up">역대 최대폭</span></div>
+        </div>
+        <div class="day">
+          <div class="dot d-down"><i class="ti ti-arrow-down"></i></div>
+          <div class="date">8/3 (월)</div>
+          <div class="title">미·일 공동 환율개입 → KOSPI -5.12%</div>
+          <div class="desc">15년 만의 미·일 협조개입으로 엔화 급등, 엔캐리 트레이드 청산 우려 확산. 외국인, SK하이닉스·삼성전자 중심 2.7조원 순매도</div>
+          <div class="chips"><span class="chip chip-down">엔캐리 우려</span></div>
+        </div>
+        <div class="day">
+          <div class="dot d-warn"><i class="ti ti-alert-triangle"></i></div>
+          <div class="date">8/5 (수)</div>
+          <div class="title">'2년 전 검은 월요일' 재현 경계감</div>
+          <div class="desc">2024년 8월5일 -10%대 폭락의 기억 소환. VKOSPI 여전히 장기평균 3~4배 수준에서 고공행진</div>
+          <div class="chips"><span class="chip chip-warn">변동성 경계</span></div>
+        </div>
+        <div class="day">
+          <div class="dot d-down"><i class="ti ti-arrow-down"></i></div>
+          <div class="date">8/6 (목)</div>
+          <div class="title">8월 첫 매도 사이드카 · 프리마켓 -29.98%</div>
+          <div class="desc">코스피200 선물 5%대 급락에 매도 사이드카 발동. 같은 날 SK하이닉스 프리마켓에서도 하한가권 소동 재발</div>
+          <div class="chips"><span class="chip chip-down">사이드카</span><span class="chip chip-warn">프리마켓 소동</span></div>
+        </div>
+        <div class="day">
+          <div class="dot d-neutral"><i class="ti ti-flag"></i></div>
+          <div class="date">8/7 (금) · 오늘</div>
+          <div class="title">NXT 프리마켓 상·하한가 주문 금지 발표</div>
+          <div class="desc">코스피 -0.60% 6,258.77 마감, 7주 연속 하락. NXT는 8/12부터 프리마켓 상·하한가 주문을 한시 금지한다고 발표</div>
+          <div class="chips"><span class="chip chip-down">7주 연속 하락</span><span class="chip chip-warn">제도 개편</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footbar">
+      <i class="ti ti-flag-2" style="margin-top:1px;"></i>
+      다음 주 최대 변수 — <b>8/27 한국은행 금통위</b>와 <b>BOJ 9월 회의</b>, 그리고 오늘 밤 발표될 미국 고용지표
+    </div>
+  </div>
+</div>
+</body>
+</html>
