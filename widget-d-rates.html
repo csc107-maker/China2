@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국·일본 금리 크로스체크 &amp; 엔캐리 트레이드 해설</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    background: #F5F7FB; color: #16213A; padding: 28px 16px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .card { background:#fff; border:1px solid #E3E8F0; border-radius:18px; overflow:hidden;
+    box-shadow: 0 1px 3px rgba(22,33,58,0.05), 0 8px 24px rgba(22,33,58,0.04); }
+  .head { background: linear-gradient(120deg, #1F4A5C 0%, #2E7A6B 100%); color:#fff; padding:22px 24px 20px; }
+  .head .eyebrow { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600;
+    background: rgba(255,255,255,0.16); padding:4px 10px; border-radius:999px; margin-bottom:10px; }
+  .head h1 { font-size: 20px; font-weight: 800; line-height:1.4; }
+  .head p { font-size: 13px; opacity:0.85; margin-top:6px; }
+
+  .rate-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#E3E8F0; }
+  .rate-box { background:#fff; padding:20px; }
+  .rate-box .flag { font-size:12px; font-weight:700; color:#5B6478; margin-bottom:6px; }
+  .rate-box .num { font-size:28px; font-weight:800; font-family: ui-monospace, Consolas, monospace; }
+  .rate-box .sub { font-size:12px; color:#5B6478; margin-top:6px; line-height:1.6; }
+  .rate-box .badge { display:inline-block; margin-top:8px; font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px; }
+  .b-up { background:#FDEDEC; color:#C0392B; }
+  .b-hold { background:#EAF0FE; color:#2F6FED; }
+
+  .section { padding: 20px 24px; border-top:1px solid #E3E8F0; }
+  .section h2 { font-size:14px; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:6px; color:#16305C; }
+
+  .flow {
+    display:flex; align-items:center; justify-content:space-between; gap:6px;
+    font-size:11.5px; font-weight:700; text-align:center;
+  }
+  .flow .node { flex:1; background:#F5F7FB; border:1px solid #E3E8F0; border-radius:10px; padding:10px 6px; line-height:1.4; }
+  .flow .arrow { color:#B3BBCB; font-size:16px; }
+
+  .tl { position:relative; padding-left:22px; margin-top:14px;}
+  .tl::before { content:''; position:absolute; left:6px; top:4px; bottom:4px; width:2px; background:#E3E8F0; }
+  .tl-item { position:relative; padding-bottom:14px; font-size:12.8px; line-height:1.55; }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before { content:''; position:absolute; left:-22px; top:3px; width:10px; height:10px; border-radius:50%; background:#2E7A6B; border:2px solid #fff; box-shadow:0 0 0 2px #2E7A6B33; }
+  .tl-item b { color:#16213A; }
+  .tl-date { font-weight:800; color:#2E7A6B; font-family: ui-monospace, Consolas, monospace; font-size:11.5px; }
+
+  .foot { padding:14px 24px 20px; font-size:11.5px; color:#8993A6; line-height:1.6; display:flex; gap:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="head">
+      <span class="eyebrow"><i class="ti ti-percentage"></i> 금리 크로스체크</span>
+      <h1>한국은행 vs 일본은행, 금리는 지금 어디로</h1>
+      <p>한 곳은 이미 올렸고, 한 곳은 9월 추가 인상을 예고했습니다</p>
+    </div>
+
+    <div class="rate-grid">
+      <div class="rate-box">
+        <div class="flag"><i class="ti ti-flag"></i> 한국은행 기준금리</div>
+        <div class="num">2.75%</div>
+        <div class="sub">7/16 금통위 0.25%p 인상<br>8/27 회의 예정</div>
+        <span class="badge b-hold">매파적 동결 전망 우세</span>
+      </div>
+      <div class="rate-box">
+        <div class="flag"><i class="ti ti-flag"></i> 일본은행 기준금리</div>
+        <div class="num">1.00%</div>
+        <div class="sub">7/31 동결, 우에다 총재<br>"9월 추가 인상" 시사</div>
+        <span class="badge b-up">9월 인상 확률 61%</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="ti ti-refresh"></i> 엔캐리 트레이드, 한 장으로 이해하기</h2>
+      <div class="flow">
+        <div class="node">① 초저금리 엔화<br>차입</div>
+        <div class="arrow">→</div>
+        <div class="node">② 고금리 자산<br>(美국채·주식 등) 투자</div>
+        <div class="arrow">→</div>
+        <div class="node">③ BOJ 금리 인상<br>= 차입비용 상승</div>
+        <div class="arrow">→</div>
+        <div class="node" style="background:#FDEDEC; border-color:#F6C9C3;">④ 포지션 청산<br>= 위험자산 매도</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="ti ti-history"></i> 왜 지금 다시 경계하나</h2>
+      <div class="tl">
+        <div class="tl-item"><span class="tl-date">2024.08.05</span><br><b>'검은 월요일'</b> — BOJ 깜짝 인상(0.25%p)에 엔캐리 청산 공포, 니케이 -12.4% · 코스피 -8%대 급락, 서킷브레이커 발동</div>
+        <div class="tl-item"><span class="tl-date">2026.06.16</span><br>BOJ 0.75%→1.00%로 인상 (31년 만의 최고 수준)</div>
+        <div class="tl-item"><span class="tl-date">2026.08.03</span><br>미·일, <b>15년 만의 공동 환율개입</b> 단행 → 엔화 급등, 엔캐리 청산 우려 재점화</div>
+        <div class="tl-item"><span class="tl-date">2026.08.05</span><br>베선트 미 재무장관 발언 이후 <b>BOJ 9월 인상 확률 61%</b>로 급등 (기존 10월 인상설에서 앞당겨짐)</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <i class="ti ti-info-circle" style="font-size:14px; margin-top:1px;"></i>
+      자료: 한국은행, 파이낸셜뉴스·이데일리·매일신문·KB금융 인사이트 종합(2026.08.07 기준). 한국은행 추정 엔캐리 관련 자금 규모는 500조엔 이상이며, 금리 인상이 즉각적인 전면 청산으로 이어질지에 대해서는 전문가 사이에 견해차가 있습니다.
+    </div>
+  </div>
+</div>
+</body>
+</html>
